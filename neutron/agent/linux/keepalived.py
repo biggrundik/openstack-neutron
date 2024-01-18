@@ -552,7 +552,7 @@ class KeepalivedTrackScript(KeepalivedConf):
     def build_config_preamble(self):
         config = ['',
                   'vrrp_script %s_%s {' % (HEALTH_CHECK_NAME, self.vr_id),
-                  '    script "%s"' % self._get_script_location(),
+                  '    script "/opt/healthcheck %s"' % self._get_script_location(),
                   '    interval %s' % self.interval,
                   '    fall 2',
                   '    rise 2',
